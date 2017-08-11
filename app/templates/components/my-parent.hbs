@@ -1,6 +1,6 @@
 {{yield (hash
   child=(component 'my-child'
-    children=children
+    siblings=children
     active-index=activeChildIndex
     on-register=(action 'registerChild')
     on-deregister=(action 'deregisterChild'))

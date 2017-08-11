@@ -6,8 +6,8 @@ export default Ember.Component.extend({
     'isActive:aria-current'
   ],
 
-  index: computed('children', function() {
-    return this.get('children').indexOf(this);
+  index: computed('siblings', function() {
+    return this.get('siblings').indexOf(this);
   }),
 
   isActive: computed('index', 'active-index', function() {
