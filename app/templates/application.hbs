@@ -1,5 +1,9 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#my-parent as |p|}}
+  {{#p.child as |c|}}
+    Child 1 (index {{c.index}})
+  {{/p.child}}
 
-{{outlet}}
+  {{#p.child as |c|}}
+    Child 2 (index {{c.index}})
+  {{/p.child}}
+{{/my-parent}}
