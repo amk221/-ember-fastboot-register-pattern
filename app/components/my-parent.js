@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import { A as emberA } from '@ember/array';
 import { scheduleOnce } from '@ember/runloop';
 
-export default Ember.Component.extend({
+export default Component.extend({
   init() {
     this._super(...arguments);
     this.set('_children', emberA());
