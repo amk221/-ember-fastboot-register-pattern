@@ -8,6 +8,6 @@
   margin: 5px;
 }
 
-.my-child.is-active {
+.my-child[aria-current] {
   border: 1px solid red;
 }

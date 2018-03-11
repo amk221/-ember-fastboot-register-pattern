@@ -3,7 +3,6 @@ import { computed } from '@ember/object';
 
 export default Component.extend({
   classNames: ['my-child'],
-  classNameBindings: ['isActive'],
   attributeBindings: ['isActive:aria-current'],
 
   index: computed('siblings', function() {
