@@ -2,9 +2,9 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 
 export default Component.extend({
-  attributeBindings: [
-    'isActive:aria-current'
-  ],
+  classNames: ['my-child'],
+  classNameBindings: ['isActive'],
+  attributeBindings: ['isActive:aria-current'],
 
   index: computed('siblings', function() {
     return this.get('siblings').indexOf(this);
@@ -22,5 +22,10 @@ export default Component.extend({
   willDestroyElement() {
     this._super(...arguments);
     this.get('on-deregister')(this);
+  },
+
+  mouseEnter() {
+    this._super(...arguments);
+    this.get('on-activate')(this.get('index'));
   }
 });

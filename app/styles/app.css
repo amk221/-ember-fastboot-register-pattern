@@ -1,0 +1,13 @@
+.my-parent {
+  border: 1px solid blue;
+  margin: 5px;
+}
+
+.my-child {
+  border: 1px solid green;
+  margin: 5px;
+}
+
+.my-child.is-active {
+  border: 1px solid red;
+}

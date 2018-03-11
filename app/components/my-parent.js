@@ -3,6 +3,8 @@ import { A as emberA } from '@ember/array';
 import { scheduleOnce } from '@ember/runloop';
 
 export default Component.extend({
+  classNames: ['my-parent'],
+
   init() {
     this._super(...arguments);
     this.set('_children', emberA());
@@ -27,6 +29,10 @@ export default Component.extend({
     deregisterChild(child) {
       this.get('_children').removeObject(child);
       this._scheduleUpdateChildren();
+    },
+
+    activateChildAtIndex(index) {
+      this.set('activeChildIndex', index);
     }
   }
 });
