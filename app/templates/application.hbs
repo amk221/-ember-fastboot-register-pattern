@@ -1,13 +1,13 @@
-{{#my-parent as |p|}}
-  {{#p.child as |c|}}
+<MyParent as |p|>
+  <p.child as |c|>
     Child 1 (index {{c.index}})
-  {{/p.child}}
+  </p.child>
 
-  {{#p.child as |c|}}
+  <p.child as |c|>
     Child 2 (index {{c.index}})
-  {{/p.child}}
+  </p.child>
 
-  {{#p.child as |c|}}
+  <p.child as |c|>
     Child 3 (index {{c.index}})
-  {{/p.child}}
-{{/my-parent}}
+  </p.child>
+</MyParent>

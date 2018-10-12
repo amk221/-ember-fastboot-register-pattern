@@ -6,25 +6,25 @@ export default Component.extend({
   attributeBindings: ['isActive:aria-current'],
 
   index: computed('siblings', function() {
-    return this.get('siblings').indexOf(this);
+    return this.siblings.indexOf(this);
   }),
 
-  isActive: computed('index', 'active-index', function() {
-    return this.get('index') === this.get('active-index');
+  isActive: computed('index', 'activeIndex', function() {
+    return this.index === this.activeIndex;
   }),
 
   init() {
     this._super(...arguments);
-    this.get('on-register')(this);
+    this.onRegister(this);
   },
 
   willDestroyElement() {
     this._super(...arguments);
-    this.get('on-deregister')(this);
+    this.onDeregister(this);
   },
 
   mouseEnter() {
     this._super(...arguments);
-    this.get('on-activate')(this.get('index'));
+    this.onActivate(this.index);
   }
 });

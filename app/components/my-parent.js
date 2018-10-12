@@ -17,17 +17,17 @@ export default Component.extend({
   },
 
   _updateChildren() {
-    this.set('children', emberA(this.get('_children').toArray()));
+    this.set('children', emberA(this._children.toArray()));
   },
 
   actions: {
     registerChild(child) {
-      this.get('_children').addObject(child);
+      this._children.addObject(child);
       this._scheduleUpdateChildren();
     },
 
     deregisterChild(child) {
-      this.get('_children').removeObject(child);
+      this._children.removeObject(child);
       this._scheduleUpdateChildren();
     },
 

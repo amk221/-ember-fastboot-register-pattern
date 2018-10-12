@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'ember-fastboot-register-pattern',
+    modulePrefix: 'example',
     environment,
     rootURL: '/',
     locationType: 'auto',

@@ -1,8 +1,10 @@
-{{yield (hash
-  child=(component "my-child"
-    siblings=children
-    active-index=activeChildIndex
-    on-activate=(action "activateChildAtIndex")
-    on-register=(action "registerChild")
-    on-deregister=(action "deregisterChild"))
-)}}
+{{yield
+  (hash
+    child=(component "my-child"
+    siblings=this.children
+    activeIndex=this.activeChildIndex
+    onActivate=(action "activateChildAtIndex")
+    onRegister=(action "registerChild")
+    onDeregister=(action "deregisterChild"))
+  )
+}}

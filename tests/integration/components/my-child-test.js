@@ -1,25 +1,26 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('my-child', 'Integration | Component | my child', {
-  integration: true
-});
+module('Integration | Component | my-child', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
+  test('it renders', async function(assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+    await render(hbs`{{my-child}}`);
 
-  this.render(hbs`{{my-child}}`);
+    assert.equal(this.element.textContent.trim(), '');
 
-  assert.equal(this.$().text().trim(), '');
+    // Template block usage:
+    await render(hbs`
+      {{#my-child}}
+        template block text
+      {{/my-child}}
+    `);
 
-  // Template block usage:
-  this.render(hbs`
-    {{#my-child}}
-      template block text
-    {{/my-child}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), 'template block text');
+  });
 });
